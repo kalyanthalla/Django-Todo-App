@@ -32,7 +32,7 @@ A full-featured task management web application built with Django, including use
 
 ```bash
 git clone https://github.com/kalyanthalla/django-todo-app.git
-cd django-todo-app
+cd todoproject
 ```
 
 ### 2. Set Up a Virtual Environment
