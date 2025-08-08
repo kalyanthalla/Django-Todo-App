@@ -1,28 +1,20 @@
 # 📝 Django To-Do Application
 
-![Django](https://img.shields.io/badge/Django-3.2-green)
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Django](https://img.shields.io/badge/Django-5.0-green)
+![Python](https://img.shields.io/badge/Python-3.13%2B-blue)
 ![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey)
 
-A full-featured task management web application built with Django, including user authentication and CRUD operations, designed with a responsive Bootstrap UI and ready for production deployment.
+A complete task management system with user authentication, built with Django and Bootstrap.
 
 ---
 
 ## 🚀 Features
 
-- ✅ User Authentication (Login / Logout)
-- 📝 Task CRUD (Create, Read, Update, Delete)
-- 🔒 User-Specific Task Management
-- 🎨 Responsive UI using Bootstrap
-- ⚙️ Production-Ready Configuration
-
----
-
-## 📦 Prerequisites
-
-- Python 3.8+
-- Django 3.2+
-- pip (Python package manager)
+- 🔐 User Authentication (Login/Logout)
+- ✅ Task Management (Create, Complete, Delete)
+- 📌 User-Specific Task Isolation
+- 🎨 Clean Bootstrap Interface
+- ⚡ Production-Ready Configuration
 
 ---
 
