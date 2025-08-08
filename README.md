@@ -47,13 +47,13 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### 3. Install Requirements
 
 ```bash
-pip install -r requirements.txt
+pip install django
 ```
 
-### 4. Configure the Database
+### 4. Run Migrations
 
 ```bash
 python manage.py migrate
@@ -73,26 +73,37 @@ python manage.py runserver
 
 Then visit:
 
-- App: http://localhost:8000  
-- Admin Panel: http://localhost:8000/admin
+- App: http://127.0.0.1:8000 
+- Admin Panel: http://127.0.0.1:8000/admin
 
 ---
 
 ## 🗂️ Project Structure
 
 ```
-django-todo-app/
-├── todoproject/          # Project configuration
-│   ├── settings.py       # Django settings
-│   └── urls.py           # Project-level URLs
-├── todo/                 # Todo application
+todoproject/
+├── todo/                 # Main app
+│   ├── migrations/       # Database migrations
+│   ├── templates/        # App templates
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py          # Task form
 │   ├── models.py         # Task model
-│   ├── views.py          # View logic
 │   ├── urls.py           # App URLs
-│   └── templates/        # App-specific templates
+│   └── views.py          # View logic
+├── todoproject/          # Project config
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py       # Django settings
+│   ├── urls.py           # Main URLs
+│   └── wsgi.py
 ├── templates/            # Base templates
-├── db.sqlite3            # SQLite database (development)
-└── manage.py             # Django CLI entry point
+│   ├── base.html         # Main template
+│   └── registration/     # Auth templates
+│       └── login.html
+├── db.sqlite3            # Development database
+└── manage.py             # Command utility
 ```
 
 ---
@@ -102,38 +113,11 @@ django-todo-app/
 In `todoproject/settings.py`:
 
 ```python
-# Important production settings
-DEBUG = False
-ALLOWED_HOSTS = ['yourdomain.com', 'localhost']
+DEBUG = True  # Set to False in production
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'task_list'
 ```
-
----
-
-## 🚢 Deployment (Production)
-
-For deploying the app to production:
-
-1. **Use PostgreSQL instead of SQLite**
-2. **Set environment variables for security (e.g., SECRET_KEY)**
-3. **Use a production server stack (e.g., Gunicorn + Nginx)**
-
-### Install Production Packages
-
-```bash
-pip install gunicorn psycopg2-binary
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Follow these steps:
-
-1. Fork the repository
-2. Create a new feature branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -m "Add new feature"`
-4. Push to the branch: `git push origin feature-name`
-5. Open a pull request
 
 ---
 
